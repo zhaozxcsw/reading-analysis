@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="kKYjA2P5UJTSdl6rN8L3xZ">
+<head data-page-node-id="pqajxUe3b7TWbiLhbULaC2">
+<meta charset="UTF-8" data-page-node-id="rv4r8ht7d6HhW9P4qK8cUh">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="xdazwwNRTL9g9pKg9lZx2T">
+<title>高中英语阅读课堂互动讲解</title>
+<link rel="stylesheet" href="style.css" data-page-node-id="73vZjYFqbxKDTmH4FeBEDY">
+</head>
+<body data-page-node-id="2f8PKMh0KUPiVuYAT14TK5">
+
+<!-- ============ 顶部工具栏 ============ -->
+<header class="toolbar" data-page-node-id="dJaqcHt6LyDdmjOwrgR55G">
+  <div class="tool-group" data-page-node-id="je3Ep14IVgF8eg5yCENXPk">
+    <button type="button" class="btn" id="btn-prev" data-page-node-id="gSF1WQ435Rt8Wt7mpOIBQL">上一题</button>
+    <span class="indicator" id="q-indicator" data-page-node-id="5jyJHGrLtct2lP4xiRuHkG">未选题</span>
+    <button type="button" class="btn" id="btn-next" data-page-node-id="czCDnA2B7Mg1FFPJr4ecVx">下一题</button>
+  </div>
+
+  <div class="tool-group" data-page-node-id="OrHNS90BDi1MdwhY0QsxvG">
+    <button type="button" class="btn mode-btn" id="btn-solve" data-page-node-id="KnJIMYllmgxiSiQ0ERcib5">做题模式</button>
+    <button type="button" class="btn mode-btn is-active" id="btn-teach" data-page-node-id="CxzzB5UyY3LSHHaqXhBKe7">讲解模式</button>
+    <button type="button" class="btn mode-btn" id="btn-intensive" data-page-node-id="n1q9uDxkQvjPphSrCtmLJm">精读模式</button>
+  </div>
+
+  <div class="tool-group" data-page-node-id="RGz9HI0nvMMt92my5lSS5h">
+    <button type="button" class="btn" id="btn-tr-all" data-page-node-id="6RnPc0zuR2LzaYPLPGeqTI">显示全部翻译</button>
+    <button type="button" class="btn" id="btn-tr-none" data-page-node-id="mI7IruUW3pFGnkjeIFlJ1Z">隐藏全部翻译</button>
+  </div>
+
+  <div class="tool-group" data-page-node-id="DKKo8WaGljkqoVIUqB6a7s">
+    <button type="button" class="btn" id="btn-structure" data-page-node-id="CHGAxTCrk63emVFecd0nPf">文章结构</button>
+    <button type="button" class="btn" id="btn-clear" data-page-node-id="l7vfTAJwwGcbvmeWjZ9TNG">清除高亮</button>
+  </div>
+
+  <div class="tool-group" data-page-node-id="TEuglUODkzOAADJX3Jb8sv">
+    <button type="button" class="btn font-btn" id="btn-font-down" data-page-node-id="ccmpYwuAfTPTZgBGtJDnIw">A－</button>
+    <span class="indicator" id="font-value" data-page-node-id="xZQcNTvZjkGmeutpFzlNZg">100%</span>
+    <button type="button" class="btn font-btn" id="btn-font-up" data-page-node-id="f948BSvUSKxNmBd3fLzSKu">A＋</button>
+  </div>
+
+  <div class="tool-group" data-page-node-id="7bZVF2ePoCIXG5hLjMV1t3">
+    <button type="button" class="btn" id="btn-fullscreen" data-page-node-id="dqf1h2oFdIs120gkmhPDTI">全屏</button>
+  </div>
+
+  <div class="tool-group mobile-tabs" data-page-node-id="ayghfKl7y2M1YBtxvnanGW">
+    <button type="button" class="btn tab-btn is-active" id="tab-passage" data-page-node-id="I3PNLP5Wpm5PRN3DYTQmwg">原文</button>
+    <button type="button" class="btn tab-btn" id="tab-questions" data-page-node-id="5ruDGfjLTH5FSBRAITaH3T">题目</button>
+  </div>
+</header>
+
+<!-- ============ 主体双栏 ============ -->
+<main class="layout" id="layout" data-page-node-id="gxzDMnENuFmnEnBstv0Al1">
+
+  <!-- 左侧：原文（默认约 60%） -->
+  <section class="panel panel-left" id="panel-left" data-page-node-id="BLaoi9fI3omPv2IMKHyefI">
+    <div class="panel-head" data-page-node-id="jZpaxs3QXFp380Inrcd7Bk">Reading Passage</div>
+    <div class="panel-body" id="passage-scroll" data-page-node-id="fH5SnRz1FrRuOXpH2Mf5SF">
+      <div class="passage-inner" id="passage" data-page-node-id="ecSLUjl9mXX5QehWck8c5f"></div>
+    </div>
+  </section>
+
+  <!-- 可拖动分隔线 -->
+  <div class="splitter" id="splitter" title="拖动调整左右栏宽度（双击恢复 60%）" data-page-node-id="dC57ORdXEbLEVlsr0UFTVv"></div>
+
+  <!-- 右侧：题目（约 40%） -->
+  <section class="panel panel-right" id="panel-right" data-page-node-id="Cx9e4JjhuQJH2VG3WGs7Ng">
+    <div class="panel-head" data-page-node-id="jHw11Gv9sxOrQF4nFnyMgo">Questions</div>
+    <div class="panel-body" id="questions-scroll" data-page-node-id="PHJPYn6AnU0CyJA1cR8ak8">
+      <div class="questions-inner" id="questions" data-page-node-id="4UJZNse19STV0rz6xkiBqe"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 手机端：一键跳到原文定位处 -->
+<button type="button" class="jump-btn" id="btn-jump" data-page-node-id="OgNr9j6VJvsPtbRFimuMVj">查看原文定位 ↑</button>
+
+<!-- ============ 文章结构弹窗 ============ -->
+<div class="modal" id="structure-modal" hidden data-page-node-id="63fIMuHoynKwXHGs7o7MXu">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-label="文章结构" data-page-node-id="3BBIZdC5ZKf9rLjbeeSNdQ">
+    <div class="modal-head" data-page-node-id="tasIVpGxyF2pc5fEzsQjuV">
+      <span class="modal-title" data-page-node-id="qzZTO94csH27s2UbdSFi5Q">文章结构分析</span>
+      <button type="button" class="btn" id="btn-structure-close" data-page-node-id="7BzTVCXAPxgUhDks9FvrI1">关闭</button>
+    </div>
+    <div class="modal-body" id="structure-body" data-page-node-id="qE0YKCKqDj5BgBINMCRCt1"></div>
+  </div>
+</div>
+
+<!-- ============ 底部提示条 ============ -->
+<div class="tip-bar" data-page-node-id="M3T83hkBTkF3QhcF47yIqx">
+  <span class="legend" data-page-node-id="ONg4AvDhF52wxpZgEhe7Dg">
+    <span class="chip chip-locate" data-page-node-id="gGbYDa0B0wAHnqggBcfLSJ">定位句</span>
+    <span class="chip chip-evidence" data-page-node-id="zfGMxfIBVP2JOQsTPIe3FD">核心证据</span>
+    <span class="chip chip-syn" data-page-node-id="xgFv2YUeP81Kg9eJ7NdIfz">同义替换</span>
+    <span class="chip chip-tr" data-page-node-id="M3w1EBLaEI92qs2lNPEYb0">中文翻译</span>
+  </span>
+  <span id="tip-text" data-page-node-id="uSw33ELLKHldJEUJfw5fdR">提示：讲解模式下点击题目卡片即可自动定位原文并高亮证据；点击英文句子可查看中文翻译。</span>
+</div>
+
+<script src="reading-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
